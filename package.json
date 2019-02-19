@@ -1,0 +1,36 @@
+{
+  "name": "stencil-inline-svg",
+  "version": "0.0.1",
+  "description": "A Stenciljs plugin to insert inline SVGs into components",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "rimraf ./dist && npm run test && npm run lint",
+    "build": "tsc && npm run rollup",
+    "dev": "tsc --watch",
+    "lint": "tslint --project tsconfig.json",
+    "release": "np",
+    "start": "npm run dev",
+    "test": "jest --coverage",
+    "test.watch": "jest --watch --coverage"
+  },
+  "keywords": [
+    "stencil",
+    "plugin",
+    "svg",
+    "inline"
+  ],
+  "author": "Fabricio Rodrigues",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.6",
+    "@types/node": "^11.9.4",
+    "jest": "^24.1.0",
+    "np": "^4.0.2",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.2.2",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.12.1",
+    "tslint-ionic-rules": "0.0.21",
+    "typescript": "^3.3.3"
+  }
+}
