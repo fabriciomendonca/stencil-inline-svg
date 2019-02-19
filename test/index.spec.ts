@@ -1,8 +1,8 @@
-import { svg } from '../src';
+import { inlineSvg } from '../src';
 
 describe('Inline SVG Stencil Plugin', () => {
   it('sanity check', () => {
-    expect(svg).toBeDefined();
-    expect(svg()).toBeNull();
+    expect(inlineSvg).toBeDefined();
+    expect(inlineSvg()).toBeNull();
   });
 });

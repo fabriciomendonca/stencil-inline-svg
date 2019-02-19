@@ -1,3 +1,3 @@
-export function svg(): void {
+export function inlineSvg(): void {
   return null;
 }

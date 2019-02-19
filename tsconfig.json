@@ -16,5 +16,5 @@
     "removeComments": false,
     "target": "es2015"
   },
-  "include": ["src"]
+  "include": ["./src/*"]
 }
