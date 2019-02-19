@@ -16,5 +16,8 @@
     "removeComments": false,
     "target": "es2015"
   },
-  "include": ["./src/*"]
+  "files": ["./src/index.ts"],
+  "include": [
+    "./src/typings.d.ts"
+  ]
 }
