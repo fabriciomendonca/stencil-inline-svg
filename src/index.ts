@@ -1,4 +1,4 @@
-import svgtojsx from 'svg-to-jsx';
+// import svgtojsx from 'svg-to-jsx';
 import { PluginTransformResults, PluginTransformer } from './declarations';
 import * as util from './util';
 
@@ -11,15 +11,9 @@ export function inlineSvg(): PluginTransformer {
       }
 
       return new Promise<PluginTransformResults>(resolve => {
-        svgtojsx(sourceText, (err, jsx) => {
-          if (err) {
-            throw err;
-          }
-
-          resolve({
-            id: fileName,
-            code: `export default \`${jsx}\``,
-          });
+        resolve({
+          id: fileName,
+          code: `export default \`${sourceText}\``,
         });
       });
     }
