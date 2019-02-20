@@ -18,7 +18,7 @@ describe('Inline SVG Stencil Plugin', () => {
     expect(response).toBeNull();
   });
 
-  xit('should return an error ', async () => {
+  it('should return an error for an empty file', async () => {
     let error;
     try {
       await transformer.transform('', 'file.svg');
@@ -26,7 +26,7 @@ describe('Inline SVG Stencil Plugin', () => {
       error = err;
     }
 
-    expect(error.message).toBe('empty-content');
+    expect(error.message).toBe('/** inlineSvg error: the SVG file is empty **/');
   });
 
   it('should transform an svg file', async () => {

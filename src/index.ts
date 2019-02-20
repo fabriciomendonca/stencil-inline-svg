@@ -10,6 +10,10 @@ export function inlineSvg(): PluginTransformer {
         return null;
       }
 
+      if (sourceText === '') {
+        throw new Error('/** inlineSvg error: the SVG file is empty **/');
+      }
+
       return new Promise<PluginTransformResults>(resolve => {
         resolve({
           id: fileName,
