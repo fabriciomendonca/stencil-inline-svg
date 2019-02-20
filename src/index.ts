@@ -1,10 +1,10 @@
 import svgtojsx from 'svg-to-jsx';
-import { PluginTransformResults } from './declarations';
+import { PluginTransformResults, PluginTransformer } from './declarations';
 import * as util from './util';
 
-export function inlineSvg() {
+export function inlineSvg(): PluginTransformer {
   return {
-    name: 'svg',
+    name: 'inlineSvg',
     transform(sourceText: string, fileName: string): Promise<PluginTransformResults> {
       if (!util.usePlugin(fileName)) {
         return null;
@@ -13,11 +13,7 @@ export function inlineSvg() {
       return new Promise<PluginTransformResults>(resolve => {
         svgtojsx(sourceText, (err, jsx) => {
           if (err) {
-            resolve({
-              id: fileName,
-              code: '',
-            });
-            return;
+            throw err;
           }
 
           resolve({

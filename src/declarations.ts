@@ -44,3 +44,8 @@ export interface PrintLine {
   errorCharStart: number;
   errorLength?: number;
 }
+
+export interface PluginTransformer {
+  name: string;
+  transform: (sourceText: string, fileName: string) => Promise<PluginTransformResults>;
+}
