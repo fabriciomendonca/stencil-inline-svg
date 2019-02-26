@@ -12,7 +12,7 @@ npm install -D stencil-inline-svg
 
 First of all, you need to declare the global `*.svg` module on your TypeScript project, if you haven't done that yet so it will be possible to directly import SVG files `import Icon from './my-icon.svg'`.
 
-```Typescript
+```javascript
 // src/typings.d.ts (example name)
 declare module '*.svg' {
   const svgContent: string;
@@ -23,7 +23,7 @@ declare module '*.svg' {
 
 Import the plugin on your `stencil.config.ts` file and add the `inlineSvg` function to your plugins list.
 
-```Typescript
+```javascript
 import { Config } from '@stencil/core';
 import { inlineSvg } from 'stencil-inline-svg';
 
@@ -43,9 +43,9 @@ export const config: Config = {
 
 Now, just import your file and set it as the `innerHTML` property of an element inside your component.
 
-```Typescript
+```javascript
 import { Component } from '@stencil/core';
-import Lambo from '../../assets/img/gallardo.svg'
+import Lambo from '../../assets/img/gallardo.svg';
 
 @Component({
   tag: 'my-component',
