@@ -5,7 +5,10 @@ import * as util from './util';
 export function inlineSvg(): PluginTransformer {
   return {
     name: 'inlineSvg',
-    transform(sourceText: string, fileName: string): Promise<PluginTransformResults> {
+    transform(
+      sourceText: string,
+      fileName: string,
+    ): Promise<PluginTransformResults> {
       if (!util.usePlugin(fileName)) {
         return null;
       }
@@ -20,6 +23,6 @@ export function inlineSvg(): PluginTransformer {
           code: `export default \`${sourceText}\``,
         });
       });
-    }
+    },
   };
 }

@@ -1,6 +1,6 @@
 {
   "name": "stencil-inline-svg",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "A Stenciljs plugin to insert inline SVGs into components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",

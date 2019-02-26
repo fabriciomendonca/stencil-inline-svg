@@ -25,7 +25,14 @@ export interface PluginCtx {
 
 export interface Diagnostic {
   level: 'error' | 'warn' | 'info' | 'log' | 'debug';
-  type: 'typescript' | 'bundling' | 'build' | 'runtime' | 'hydrate' | 'css' | 'inline-svg';
+  type:
+    | 'typescript'
+    | 'bundling'
+    | 'build'
+    | 'runtime'
+    | 'hydrate'
+    | 'css'
+    | 'inline-svg';
   header?: string;
   language?: string;
   messageText: string;
@@ -47,5 +54,8 @@ export interface PrintLine {
 
 export interface PluginTransformer {
   name: string;
-  transform: (sourceText: string, fileName: string) => Promise<PluginTransformResults>;
+  transform: (
+    sourceText: string,
+    fileName: string,
+  ) => Promise<PluginTransformResults>;
 }
