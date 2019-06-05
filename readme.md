@@ -54,7 +54,7 @@ import Lambo from '../../assets/img/gallardo.svg';
 })
 export class MyComponent {
   render() {
-    return <div class='svg-container' innerHTML={Lambo} />;
+    return <img src={Lambo} />;
   }
 }
 ```
