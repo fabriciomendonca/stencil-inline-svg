@@ -20,7 +20,7 @@ export function inlineSvg(): PluginTransformer {
       return new Promise<PluginTransformResults>(resolve => {
         resolve({
           id: fileName,
-          code: `export default \`${sourceText}\``,
+          code: sourceText,
         });
       });
     },

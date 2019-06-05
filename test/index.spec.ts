@@ -33,7 +33,7 @@ describe('Inline SVG Stencil Plugin', () => {
     const response = await transformer.transform('Content', 'file.svg');
 
     expect(response).toEqual({
-      code: 'export default `Content`',
+      code: 'Content',
       id: 'file.svg'
     });
   });
