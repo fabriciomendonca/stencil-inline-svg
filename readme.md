@@ -2,6 +2,8 @@
 
 A Stenciljs plugin to insert inline SVGs into components on build time.
 
+> Requires stenciljs version ^1.4.0 - `"@stencil/core": "^1.4.0"`
+
 ## Installation
 
 ```bash
@@ -9,17 +11,6 @@ npm install -D stencil-inline-svg
 ```
 
 ## Usage
-
-First of all, you need to declare the global `*.svg` module on your TypeScript project, if you haven't done that yet so it will be possible to directly import SVG files `import Icon from './my-icon.svg'`.
-
-```javascript
-// src/typings.d.ts (example name)
-declare module '*.svg' {
-  const svgContent: string;
-
-  export default svgContent;
-}
-```
 
 Import the plugin on your `stencil.config.ts` file and add the `inlineSvg` function to your plugins list.
 
@@ -31,7 +22,7 @@ export const config: Config = {
   namespace: 'mycomponent',
   outputTargets: [
     { type: 'dist' },
-    { type: 'docs' },
+    { type: 'docs-readme' },
     {
       type: 'www',
       serviceWorker: null, // disable service workers

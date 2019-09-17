@@ -18,9 +18,10 @@ export function inlineSvg(): PluginTransformer {
       }
 
       return new Promise<PluginTransformResults>(resolve => {
+        const svgCode = util.decodeBase64SourceText(sourceText) || sourceText;
         resolve({
           id: fileName,
-          code: `export default \`${sourceText}\``,
+          code: `export default \`${svgCode}\``,
         });
       });
     },
