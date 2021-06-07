@@ -22,5 +22,5 @@ export function decodeBase64SourceText(sourceText: string) {
 
   base64Code = base64Code.slice(0, base64Code.indexOf(`';`));
 
-  return new Buffer(base64Code, 'base64').toString();
+  return Buffer.from(base64Code, 'base64').toString();
 }

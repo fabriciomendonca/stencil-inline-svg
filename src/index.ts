@@ -17,7 +17,7 @@ export function inlineSvg(): PluginTransformer {
         throw new Error('/** inlineSvg error: the SVG file is empty **/');
       }
 
-      return new Promise<PluginTransformResults>(resolve => {
+      return new Promise<PluginTransformResults>((resolve) => {
         const svgCode = util.decodeBase64SourceText(sourceText) || sourceText;
         resolve({
           id: fileName,
