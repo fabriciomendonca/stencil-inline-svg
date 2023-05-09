@@ -14,7 +14,8 @@
     "outDir": "dist",
     "pretty": true,
     "removeComments": false,
-    "target": "es2015"
+    "target": "es2015",
+    "esModuleInterop": true
   },
   "files": ["./src/index.ts"],
   "exclude": ["node_modules"]
